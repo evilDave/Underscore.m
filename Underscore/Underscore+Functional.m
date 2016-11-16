@@ -274,6 +274,19 @@
     };
 }
 
++ (id (^)(NSDictionary *dictionary, UnderscorePredicateBlock block))findKey {
+	return ^id(NSDictionary *dictionary, UnderscorePredicateBlock block) {
+		return [USDictionaryWrapper wrap:dictionary].findKey(block);
+	};
+}
+
++ (NSDictionary *(^)(NSDictionary *, UnderscoreTestBlock))filterValuesX
+{
+	return ^(NSDictionary *dictionary, UnderscoreTestBlock block) {
+		return [USDictionaryWrapper wrap:dictionary].filterValues(block).unwrap;
+	};
+}
+
 + (NSDictionary *(^)(NSDictionary *, UnderscoreTestBlock))rejectKeys
 {
     return ^(NSDictionary *dictionary, UnderscoreTestBlock block) {

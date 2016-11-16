@@ -50,6 +50,8 @@
 @property (readonly) USDictionaryWrapper *(^filterKeys)(UnderscoreTestBlock block);
 @property (readonly) USDictionaryWrapper *(^filterValues)(UnderscoreTestBlock block);
 
+@property (readonly) id (^findKey)(UnderscorePredicateBlock block);
+
 @property (readonly) USDictionaryWrapper *(^rejectKeys)(UnderscoreTestBlock block);
 @property (readonly) USDictionaryWrapper *(^rejectValues)(UnderscoreTestBlock block);
 

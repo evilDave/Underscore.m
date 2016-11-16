@@ -164,6 +164,22 @@
     };
 }
 
+- (id (^)(UnderscorePredicateBlock))findKey
+{
+	return ^id (UnderscorePredicateBlock predicate) {
+		__block id result = nil;
+
+		[self.dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+			*stop = predicate(obj, key);
+			if(*stop) {
+				result = key;
+			}
+		}];
+
+		return result;
+	};
+}
+
 - (USDictionaryWrapper *(^)(UnderscoreTestBlock))rejectKeys
 {
     return ^USDictionaryWrapper *(UnderscoreTestBlock test) {

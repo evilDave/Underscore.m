@@ -27,6 +27,7 @@
 #import <Foundation/Foundation.h>
 
 typedef BOOL (^UnderscoreTestBlock)(id obj);
+typedef BOOL (^UnderscorePredicateBlock)(id obj, id key);
 typedef id   (^UnderscoreReduceBlock)(id memo, id obj);
 
 typedef void (^UnderscoreArrayIteratorBlock)(id obj);

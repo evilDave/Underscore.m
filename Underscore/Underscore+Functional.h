@@ -85,6 +85,9 @@
 + (NSDictionary *(^)(NSDictionary *dictionary, UnderscoreTestBlock block))filterKeys;
 + (NSDictionary *(^)(NSDictionary *dictionary, UnderscoreTestBlock block))filterValues;
 
++ (NSDictionary *(^)(NSDictionary *dictionary, UnderscoreTestBlock block))filterValuesX;
++ (id (^)(NSDictionary *dictionary, UnderscorePredicateBlock block))findKey;
+
 + (NSDictionary *(^)(NSDictionary *dictionary, UnderscoreTestBlock block))rejectKeys;
 + (NSDictionary *(^)(NSDictionary *dictionary, UnderscoreTestBlock block))rejectValues;
 
