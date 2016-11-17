@@ -65,6 +65,13 @@
     return [self.dictionary copy];
 }
 
+#pragma mark Just pass though some useful methods
+
+- (id)objectForKeyedSubscript:(id)key
+{
+	return self.dictionary[key];
+}
+
 #pragma mark Underscore methods
 
 - (USArrayWrapper *)keys

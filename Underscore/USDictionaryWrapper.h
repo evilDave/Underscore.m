@@ -34,6 +34,8 @@
 + (USDictionaryWrapper *)wrap:(NSDictionary *)dictionary;
 - (NSDictionary *)unwrap;
 
+- (id)objectForKeyedSubscript:(id)key;
+
 - (id)init __attribute__((deprecated("You should Underscore.dict() instead")));
 
 @property (readonly) USArrayWrapper *keys;
