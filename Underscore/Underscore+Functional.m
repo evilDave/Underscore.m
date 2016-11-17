@@ -280,13 +280,6 @@
 	};
 }
 
-+ (NSDictionary *(^)(NSDictionary *, UnderscoreTestBlock))filterValuesX
-{
-	return ^(NSDictionary *dictionary, UnderscoreTestBlock block) {
-		return [USDictionaryWrapper wrap:dictionary].filterValues(block).unwrap;
-	};
-}
-
 + (NSDictionary *(^)(NSDictionary *, UnderscoreTestBlock))rejectKeys
 {
     return ^(NSDictionary *dictionary, UnderscoreTestBlock block) {
