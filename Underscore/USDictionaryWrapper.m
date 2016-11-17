@@ -24,9 +24,8 @@
 //  IN THE SOFTWARE.
 //
 
-#import "Underscore.h"
-
 #import "USDictionaryWrapper.h"
+#import "Underscore.h"
 
 @interface USDictionaryWrapper ()
 
@@ -65,11 +64,11 @@
     return [self.dictionary copy];
 }
 
-#pragma mark Just pass though some useful methods
+#pragma mark Pass though some useful methods from NSDictionary
 
 - (id)objectForKeyedSubscript:(id)key
 {
-	return self.dictionary[key];
+	return [self.dictionary objectForKeyedSubscript:key];
 }
 
 #pragma mark Underscore methods
@@ -177,7 +176,7 @@
 		__block id result = nil;
 
 		[self.dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-			*stop = predicate(obj, key);
+			*stop = predicate(key, obj);
 			if(*stop) {
 				result = key;
 			}
